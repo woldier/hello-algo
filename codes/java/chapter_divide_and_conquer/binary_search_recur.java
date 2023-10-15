@@ -14,7 +14,7 @@ public class binary_search_recur {
             return -1;
         }
         // 计算中点索引 m
-        int m = (i + j) / 2;
+        int m = (i + j) >>> 2; //这里除二用无符号右移运算符进行替代, 原因是当i,j 都接近最大正整数那么两者相加为负数, 那么除以2任然为负数
         if (nums[m] < target) {
             // 递归子问题 f(m+1, j)
             return dfs(nums, target, m + 1, j);
